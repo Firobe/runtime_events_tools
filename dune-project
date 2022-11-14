@@ -1,4 +1,4 @@
-(lang dune 3.2)
+(lang dune 2.9)
 
 (name runtime_events_tools)
 

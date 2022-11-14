@@ -8,7 +8,7 @@ license: "ISC"
 homepage: "https://github.com/sadiqj/runtime_events_tools"
 bug-reports: "https://github.com/sadiqj/runtime_events_tools/issues"
 depends: [
-  "dune" {>= "3.2"}
+  "dune" {>= "2.9"}
   "ocaml" {>= "5.0.0~"}
   "ocamlfind"
   "hdr_histogram"
@@ -24,9 +24,11 @@ build: [
     name
     "-j"
     jobs
+    "--promote-install-files=false"
     "@install"
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
+  ["dune" "install" "-p" name "--create-install-files" name]
 ]
 dev-repo: "git+https://github.com/sadiqj/runtime_events_tools.git"
